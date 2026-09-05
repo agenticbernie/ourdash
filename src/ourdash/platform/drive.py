@@ -44,7 +44,7 @@ from ourdash.platform.models import (
     TokenTransferPage,
     UsernameResolution,
 )
-from ourdash.platform.proofs import FakeVerifier, Verifier
+from ourdash.platform.proofs import ReferenceBridgeVerifier, Verifier
 from ourdash.redact import RedactionFilter
 
 logger = logging.getLogger(__name__)
@@ -89,9 +89,12 @@ class Drive:
         fetcher: Fetcher | None = None,
     ) -> None:
         self.client = client
-        # Default is the structural FakeVerifier (verdict plumbing, not
-        # cryptography) — swap in ReferenceBridgeVerifier for real checks.
-        self.verifier: Verifier = verifier if verifier is not None else FakeVerifier()
+        # Fail-closed default: the reference bridge raises
+        # ProofUnavailableError when its binary is absent, so an
+        # unverified envelope can never yield CHECKED by default.
+        # Pass an explicit FakeVerifier for offline/fixture tests
+        # (verdict plumbing only — never cryptography).
+        self.verifier: Verifier = verifier if verifier is not None else ReferenceBridgeVerifier()
         self.fetcher = fetcher
 
     def _fetch(self, endpoint: str, request: Mapping[str, Any]) -> Mapping[str, Any]:

@@ -95,7 +95,10 @@ DOC0: {'doc_id': 'cVnj3JkCiQegDzUMpDMgHFhen5kP6RkoXbNQqb8NdFm', 'contract_id': '
 ```
 
 `FakeVerifier` checks proof PLUMBING (well-formed envelope proof →
-`CHECKED`), never proof cryptography. Swap in
+`CHECKED`), never proof cryptography. `Drive` defaults to
+`ReferenceBridgeVerifier` (fail-closed: raises `ProofUnavailableError`
+when the bridge binary is absent, never default `CHECKED`); the
+`FakeVerifier` below is passed explicitly for offline replay. Swap in
 `ReferenceBridgeVerifier` (bridge to the pinned `@dashevo/dapi-client`
 reference) for real checks — see `platform/proofs.py` for the pin and
 invocation schema.

@@ -239,6 +239,38 @@ def test_missing_fetcher_raises_proof_unavailable() -> None:
         bare.get_identity(IDENTITY_QE, trust_node=True)
 
 
+def test_default_verifier_is_fail_closed_reference_bridge(
+    envelopes: dict[str, dict[str, Any]],
+) -> None:
+    drive = Drive(DAPIClient.from_network("testnet"), fetcher=_fetcher(envelopes))
+    assert isinstance(drive.verifier, ReferenceBridgeVerifier)
+    # trust_node=False (the default) must NEVER yield CHECKED without an
+    # explicit verifier: the bridge binary is absent, so this raises
+    # ProofUnavailableError instead of returning unverified CHECKED data.
+    with pytest.raises(ProofUnavailableError):
+        drive.get_identity(IDENTITY_QE)
+
+
+def test_explicit_fake_verifier_still_returns_checked(
+    envelopes: dict[str, dict[str, Any]],
+) -> None:
+    drive = Drive(
+        DAPIClient.from_network("testnet"),
+        verifier=FakeVerifier(),
+        fetcher=_fetcher(envelopes),
+    )
+    assert drive.get_identity(IDENTITY_QE).verdict is ProofVerdict.CHECKED
+
+
+def test_default_verifier_trust_node_true_still_unchecked_with_warning(
+    envelopes: dict[str, dict[str, Any]],
+) -> None:
+    drive = Drive(DAPIClient.from_network("testnet"), fetcher=_fetcher(envelopes))
+    with pytest.warns(UserWarning, match="UNCHECKED"):
+        result = drive.get_identity(IDENTITY_QE, trust_node=True)
+    assert result.verdict is ProofVerdict.UNCHECKED
+
+
 def test_malformed_envelope_surfaces_typed_error(drive: Drive) -> None:
     drive.fetcher = lambda endpoint, request: {
         "data": {"identity": {"balance": "nan"}},
