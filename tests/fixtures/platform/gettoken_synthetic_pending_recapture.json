@@ -1,0 +1,43 @@
+{
+ "endpoint": "getTokenContractInfo+getIdentitiesTokenBalances",
+ "network": "testnet",
+ "source": "hand-built (no testnet token contract is publicly documented; token tutorials register per-user contracts)",
+ "captured": "2026-09-05",
+ "synthetic": "synthetic-pending-recapture",
+ "provenance": "STRUCTURALLY-FAITHFUL SYNTHETIC fixture: JSON shape mirrors GetTokenContractInfo/GetIdentitiesTokenBalances + Proof proto fields; ids are sha256-derived; proof bytes are placeholders. Recapture from testnet in Phase 6 walkthrough.",
+ "request": {
+  "token_id": "J99wS5tyjLseQpZRwMWBUx2ZP87dgH3y68651xLrvwJo",
+  "identity_ids": [
+   "BNnn19SAJZuvsUu787dMzPDXASwuCrm4yQ864tEpQFvo"
+  ],
+  "prove": true
+ },
+ "data": {
+  "token": {
+   "token_id": "J99wS5tyjLseQpZRwMWBUx2ZP87dgH3y68651xLrvwJo",
+   "contract_id": "dzeBW9RXJrpMP59778xrwh599hweHuznEGeJVkdSkw9",
+   "position": 0
+  },
+  "balances": [
+   {
+    "identity_id": "BNnn19SAJZuvsUu787dMzPDXASwuCrm4yQ864tEpQFvo",
+    "balance": 1000
+   }
+  ],
+  "continuation_token": null
+ },
+ "proof": {
+  "grovedb_proof_b64": "c3ludGhldGljLXBlbmRpbmctcmVjYXB0dXJlOmdyb3ZlZGItcHJvb2Y=",
+  "quorum_hash_b64": "c3ludGhldGljLXBlbmRpbmctcmVjYXB0dXJlOnF1b3J1bS1oYXNoLTMyLWJ5dGVzLXBhZGRpbmchISEh",
+  "signature_b64": "c3ludGhldGljLXBlbmRpbmctcmVjYXB0dXJlOmJscy1zaWduYXR1cmU=",
+  "block_id_hash_b64": "c3ludGhldGljLXBlbmRpbmctcmVjYXB0dXJlOmJsb2NrLWlkLWhhc2gtMzItYnl0ZXMtcGFkZGluZyEhIQ==",
+  "quorum_type": 6
+ },
+ "metadata": {
+  "height": "558061",
+  "core_chain_locked_height": 1547601,
+  "epoch": 18671,
+  "chain_id": "dash-testnet-51"
+ },
+ "raw": {}
+}
