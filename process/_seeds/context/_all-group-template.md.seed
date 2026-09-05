@@ -1,0 +1,136 @@
+---
+name: context:all-{{group}}
+description: "{{group_scope_short}} — the {{group_name}} group entrypoint/router"
+keywords: {{group}}, (add the task-vocabulary terms an agent would use for this domain)
+related: []
+date: (dd-mm-yy)
+---
+
+# {{group_name}} Context
+
+This file is the canonical {{group_name}} context entrypoint for {{project_name}}.
+
+Use it after `process/context/all-context.md` when the task needs {{group_scope_short}}.
+
+---
+
+## How to Use This Template
+
+This is a seed template for creating `all-{group}.md` entrypoints when a new context group is created.
+
+To use: copy this file to `process/context/{group}/all-{group}.md`, then replace:
+- `{{group_name}}` with the display name (e.g., "Database", "Auth", "Infrastructure")
+- `{{group_scope_short}}` with a brief scope phrase (e.g., "schema changes, migrations, or query patterns")
+- `{{project_name}}` with the project name
+- Fill in each section with real project-specific content
+- Fill in the YAML frontmatter at the top: a non-empty `keywords` list (task-vocabulary terms — this is what `discover-context.mjs --match` ranks against) and any `related: [context:{slug}]` siblings usually needed alongside this group. Lint warns on empty keywords and fails on dangling related slugs.
+
+Every `all-{group}.md` entrypoint MUST have frontmatter (`name`, `description`, `keywords`, `date`) plus these sections: Scope, Read When, Quick Routing, Source Paths, Update Triggers.
+
+---
+
+## Scope
+
+<!-- What this group covers and what it does NOT cover. Be explicit about boundaries. -->
+
+This group covers:
+
+- (list the durable knowledge domains this group owns)
+- (be specific: "Prisma schema conventions" not just "database")
+- (include operational knowledge, not just code locations)
+
+It does not cover:
+
+- (list what belongs elsewhere)
+- (e.g., "feature-specific migration plans -- those belong in process/features/...")
+- (e.g., "CI/CD pipeline config -- that belongs in the infra/ group")
+
+<!-- Example filled in for a "database" group: -->
+
+<!--
+This group covers:
+
+- Prisma schema conventions, model relationships, and enum patterns
+- Migration workflow (create, apply, rollback, production deploy)
+- Database client setup and connection pooling
+- Key models and their relationships
+- Seeding procedures for development and testing
+
+It does not cover:
+
+- Feature-specific migration plans (those belong in process/features/...)
+- Database hosting/infrastructure (that belongs in the infra/ group)
+- Test database setup (that belongs in the tests/ group)
+-->
+
+## Read When
+
+<!-- When should an agent load this group? Be action-oriented. -->
+
+Read this entrypoint when:
+
+- (describe the task that triggers reading this group)
+- (describe another task)
+- (describe another task)
+
+<!-- Example filled in for a "database" group: -->
+
+<!--
+Read this entrypoint when:
+
+- adding or modifying Prisma models or relations
+- running or creating database migrations
+- debugging database connection or query issues
+- understanding how models relate to API routers
+-->
+
+## Quick Routing
+
+<!-- Route to deeper docs within this group. This is the key value of the entrypoint. -->
+<!-- Format: what the agent needs -> which file to read -->
+
+- use `process/context/{{group}}/file-one.md` for (description of what it covers)
+- use `process/context/{{group}}/file-two.md` for (description of what it covers)
+
+<!-- Example filled in for a "database" group: -->
+
+<!--
+- use `process/context/database/schema-guide.md` for model conventions, relationships, enum patterns, and naming rules
+- use `process/context/database/migration-procedures.md` for step-by-step migration workflow, rollback, and production deploy
+- use `process/context/database/seeding.md` for development and test seeding procedures
+-->
+
+## Source Paths
+
+<!-- List all deeper docs in this group. Keep this list in sync with actual files. -->
+
+- `process/context/{{group}}/...`
+
+## Update Triggers
+
+<!-- When should this group's content be refreshed? -->
+
+Update this group when:
+
+- (describe what changes would make this content stale)
+- (describe another trigger)
+- (describe another trigger)
+
+<!-- Example filled in for a "database" group: -->
+
+<!--
+Update this group when:
+
+- Prisma schema conventions or model patterns change
+- Migration workflow or tooling changes
+- Database hosting provider or connection setup changes
+- The group grows enough to split into more durable subdomains
+-->
+
+## Canonical Notes
+
+<!-- Any group-specific operational notes that don't fit elsewhere. -->
+<!-- Remove this section if empty after filling in. -->
+
+- use `process/context/{{group}}/all-{{group}}.md` as the entrypoint
+- (list deeper reference files)

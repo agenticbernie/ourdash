@@ -1,0 +1,62 @@
+# {{feature_name}}
+
+<!-- Part of {{project_name}} -->
+
+## Scope
+
+<!-- STUDY: Replace with a 2-3 sentence description of what this feature covers. -->
+<!-- Be specific about the product area, not just the technical domain. -->
+
+<!-- Example filled in for a "user-authentication" feature: -->
+
+<!--
+User authentication and session management for the web application. Covers Clerk integration,
+protected route middleware, webhook-based user sync to the database, and role-based access
+control for admin vs regular users.
+-->
+
+(pending -- populated during STUDY phase)
+
+## Key Source Files
+
+<!-- STUDY: List the primary source files and directories for this feature. -->
+<!-- Include route files, API routers, components, and config. -->
+
+<!-- Example filled in: -->
+
+<!--
+- `apps/web/src/app/(auth)/` -- login, signup, and callback routes
+- `apps/web/src/middleware.ts` -- Clerk auth middleware
+- `packages/api/src/router/user.ts` -- user tRPC router
+- `packages/db/prisma/schema.prisma` -- User and Session models
+- `apps/web/src/components/auth/` -- auth-related UI components
+-->
+
+## Related Context
+
+<!-- STUDY: Link to relevant context group entrypoints. -->
+
+<!-- Example: -->
+
+<!--
+- `process/context/auth/all-auth.md` -- auth conventions and patterns
+- `process/context/tests/all-tests.md` -- test commands for auth flows
+-->
+
+## Current Status
+
+<!-- STUDY: Brief status of the feature. Update as work progresses. -->
+<!-- Use one of: not-started | in-progress | stable | needs-refactor -->
+
+Status: (pending)
+
+## Folder Contents
+
+```
+process/features/{{feature_name}}/
+  active/       -- in-progress plans for this feature (each task lives inside a {slug}_{date}/ task folder)
+  completed/    -- archived completed plans
+  backlog/      -- deferred/future plans
+```
+
+All artifacts (plans, specs, reports, references) colocate inside each `{slug}_{date}/` task folder. Do NOT create `reports/` or `references/` sibling dirs.

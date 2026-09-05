@@ -1,0 +1,964 @@
+{
+  "owner": "audit-context",
+  "generatedFrom": {
+    "skillsRoot": ".claude/skills",
+    "routingPolicy": ".claude/skills/vc-audit-context/references/skill-routing-policy.json",
+    "canonicalRoutingSurfaces": [
+      "AGENTS.md",
+      "CLAUDE.md",
+      "process/context/generated-skills-catalog.json"
+    ]
+  },
+  "skillCount": 33,
+  "skills": [
+    {
+      "folder": "vc-agent-browser",
+      "name": "vc-agent-browser",
+      "description": "AI-optimized browser automation CLI with context-efficient snapshots. Use for long autonomous sessions, self-verifying workflows, video recording, and cloud browser testing (Browserbase).",
+      "aliases": [
+        "vc-agent-browser"
+      ],
+      "normalizedName": "vcagentbrowser",
+      "triggerKeywords": [
+        "browser",
+        "screenshot",
+        "scrape",
+        "automation",
+        "web automation",
+        "agent-browser",
+        "browserbase",
+        "cloud browser",
+        "headless",
+        "playwright",
+        "snapshot"
+      ],
+      "layer": "helper",
+      "routedFrom": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [
+        "references/browserbase-cloud-setup.md"
+      ],
+      "mentionedSkills": []
+    },
+    {
+      "folder": "vc-agent-strategy-compare",
+      "name": "vc-agent-strategy-compare",
+      "description": "Evaluate 4 execution strategies (sequential, parallel-subagents, workflow, agent-team) for a phase or fan-out task. Outputs 7-signal score table, agent count math, cost guards, and strategy recommendation.",
+      "aliases": [
+        "vc-agent-strategy-compare"
+      ],
+      "normalizedName": "vcagentstrategycompare",
+      "triggerKeywords": [
+        "execution strategy",
+        "parallel agents",
+        "strategy comparison",
+        "agent count",
+        "fan-out recommendation"
+      ],
+      "layer": "contract",
+      "routedFrom": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [],
+      "mentionedSkills": []
+    },
+    {
+      "folder": "vc-audit-context",
+      "name": "vc-audit-context",
+      "description": "Audit project context routing, shared-skill discoverability, and Claude/Codex wiring. Use when context docs or skill surfaces move, split, or drift.",
+      "aliases": [
+        "vc-audit-context"
+      ],
+      "normalizedName": "vcauditcontext",
+      "triggerKeywords": [
+        "audit context",
+        "context gaps",
+        "context routing audit",
+        "discoverability"
+      ],
+      "layer": "contract",
+      "routedFrom": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [
+        "references/audit-context.md"
+      ],
+      "mentionedSkills": [
+        "vc-scout"
+      ]
+    },
+    {
+      "folder": "vc-audit-plans",
+      "name": "vc-audit-plans",
+      "description": "Audit active project plan files for staleness, completion, and routing truth. Use when cleaning up plans, reconciling active work, or archiving completed artifacts.",
+      "aliases": [
+        "vc-audit-plans"
+      ],
+      "normalizedName": "vcauditplans",
+      "triggerKeywords": [
+        "audit plans",
+        "plan inventory",
+        "stale plans",
+        "active plan count"
+      ],
+      "layer": "contract",
+      "routedFrom": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [
+        "references/audit-plans.md"
+      ],
+      "mentionedSkills": []
+    },
+    {
+      "folder": "vc-audit-vc",
+      "name": "vc-audit-vc",
+      "description": "Audit agent harness health: Claude/Codex agent parity, skill registry consistency, README.md sync, and protocol file wiring. Use when agents, skills, README.md, or development-protocol files move, split, or drift.",
+      "aliases": [
+        "vc-audit-vc"
+      ],
+      "normalizedName": "vcauditvc",
+      "triggerKeywords": [
+        "harness audit",
+        "agent parity",
+        "skill audit",
+        "guide sync"
+      ],
+      "layer": "contract",
+      "routedFrom": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [],
+      "mentionedSkills": []
+    },
+    {
+      "folder": "vc-autopilot",
+      "name": "vc-autopilot",
+      "description": "Emit and validate the provisional goal block for Autopilot Mode. Owns the 9-field format and resume detection from a pasted goal block.",
+      "aliases": [
+        "vc-autopilot"
+      ],
+      "normalizedName": "vcautopilot",
+      "triggerKeywords": [
+        "autopilot",
+        "run autopilot",
+        "full autopilot",
+        "autonomous mode",
+        "goal block",
+        "provisional goal",
+        "AUTOPILOT_ACTIVATED",
+        "resume autopilot"
+      ],
+      "layer": "contract",
+      "routedFrom": [
+        "AGENTS.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [
+        "scripts/validate-autopilot-goal-block.mjs"
+      ],
+      "mentionedSkills": []
+    },
+    {
+      "folder": "vc-autoresearch",
+      "name": "vc-autoresearch",
+      "description": "Loop: find gaps → fix → repeat until agents find no gaps or a metric goal is hit. Shared loop primitive for PVL, EVL, and standalone quality runs.",
+      "aliases": [
+        "vc-autoresearch"
+      ],
+      "normalizedName": "vcautoresearch",
+      "triggerKeywords": [
+        "autoresearch",
+        "harden spec",
+        "fix all errors",
+        "improve coverage",
+        "iterative improvement",
+        "gap loop"
+      ],
+      "layer": "contract",
+      "routedFrom": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [],
+      "mentionedSkills": [
+        "vc-predict",
+        "vc-scenario",
+        "vc-security",
+        "vc-validate-findings"
+      ]
+    },
+    {
+      "folder": "vc-context-discovery",
+      "name": "vc-context-discovery",
+      "description": "Discover and load all relevant context for the current task. Lists feature group nested files with full paths, loads process/context/ files by domain routing. Called at the start of every agent session.",
+      "aliases": [
+        "vc-context-discovery"
+      ],
+      "normalizedName": "vccontextdiscovery",
+      "triggerKeywords": [
+        "context discovery",
+        "load context",
+        "feature folder files",
+        "context routing discovery"
+      ],
+      "layer": "contract",
+      "routedFrom": [
+        "CLAUDE.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [],
+      "mentionedSkills": []
+    },
+    {
+      "folder": "vc-debug",
+      "name": "vc-debug",
+      "description": "Debug systematically with root-cause analysis before fixes. Use for bugs, test failures, unexpected behavior, performance issues, CI failures, or system investigation.",
+      "aliases": [
+        "vc-debug"
+      ],
+      "normalizedName": "vcdebug",
+      "triggerKeywords": [
+        "debug",
+        "root cause",
+        "investigate",
+        "why is this"
+      ],
+      "layer": "helper",
+      "routedFrom": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [
+        "references/defense-in-depth.md",
+        "references/frontend-verification.md",
+        "references/investigation-methodology.md",
+        "references/log-and-ci-analysis.md",
+        "references/performance-diagnostics.md",
+        "references/reporting-standards.md",
+        "references/root-cause-tracing.md",
+        "references/systematic-debugging.md",
+        "references/task-management-debugging.md",
+        "references/verification.md",
+        "scripts/find-polluter.sh"
+      ],
+      "mentionedSkills": [
+        "vc-agent-browser",
+        "vc-docs-seeker",
+        "vc-problem-solving",
+        "vc-scout"
+      ]
+    },
+    {
+      "folder": "vc-docs-seeker",
+      "name": "vc-docs-seeker",
+      "description": "Search library/framework documentation via llms.txt (context7.com). Use for API docs, GitHub repository analysis, technical documentation lookup, latest library features.",
+      "aliases": [
+        "vc-docs-seeker"
+      ],
+      "normalizedName": "vcdocsseeker",
+      "triggerKeywords": [
+        "how does X work",
+        "API docs",
+        "version",
+        "syntax"
+      ],
+      "layer": "helper",
+      "routedFrom": [
+        "AGENTS.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [
+        "references/advanced.md",
+        "references/context7-patterns.md",
+        "references/errors.md"
+      ],
+      "mentionedSkills": []
+    },
+    {
+      "folder": "vc-feasibility-test",
+      "name": "vc-feasibility-test",
+      "description": "Use when a SPEC, INNOVATE, or VALIDATE (Layer 2) approach hinges on an unverified runtime/library/external mechanism: run a probe from the 8-family taxonomy and produce a VIABLE/NOT-VIABLE/INCONCLUSIVE VERDICT artifact.",
+      "aliases": [
+        "vc-feasibility-test"
+      ],
+      "normalizedName": "vcfeasibilitytest",
+      "triggerKeywords": [
+        "feasibility",
+        "spike",
+        "verify assumption",
+        "probe mechanism",
+        "empirical check",
+        "unverified mechanism",
+        "does this work",
+        "runtime quirk",
+        "api shape check"
+      ],
+      "layer": "contract",
+      "routedFrom": [
+        "AGENTS.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [],
+      "mentionedSkills": [
+        "vc-test-coverage-plan"
+      ]
+    },
+    {
+      "folder": "vc-frontend-design",
+      "name": "vc-frontend-design",
+      "description": "Create polished frontend interfaces from designs/screenshots/videos. Use for web components, 3D experiences, replicating UI designs, quick prototypes, immersive interfaces, avoiding AI slop.",
+      "aliases": [
+        "vc-frontend-design"
+      ],
+      "normalizedName": "vcfrontenddesign",
+      "triggerKeywords": [
+        "UI",
+        "design",
+        "layout",
+        "component",
+        "page",
+        "interface",
+        "visual",
+        "CSS",
+        "Tailwind",
+        "login page",
+        "dashboard"
+      ],
+      "layer": "helper",
+      "routedFrom": [
+        "AGENTS.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [],
+      "mentionedSkills": []
+    },
+    {
+      "folder": "vc-generate-closeout",
+      "name": "vc-generate-closeout",
+      "description": "Generate the post-EXECUTE closeout packet for a plan or phase. Includes archive-readiness classification, drift signal scoring, commit checkpoint recommendation, and move-on next-state recommendation.",
+      "aliases": [
+        "vc-generate-closeout"
+      ],
+      "normalizedName": "vcgeneratecloseout",
+      "triggerKeywords": [
+        "closeout",
+        "phase closeout",
+        "archive readiness",
+        "drift scoring",
+        "move-on"
+      ],
+      "layer": "contract",
+      "routedFrom": [
+        "AGENTS.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [],
+      "mentionedSkills": []
+    },
+    {
+      "folder": "vc-generate-context",
+      "name": "vc-generate-context",
+      "description": "Generate or update the project's authoritative repository context at process/context/all-context.md. Use when repo context is missing, stale, or contradicted by code.",
+      "aliases": [
+        "vc-generate-context"
+      ],
+      "normalizedName": "vcgeneratecontext",
+      "triggerKeywords": [
+        "generate context",
+        "update context",
+        "refresh context",
+        "missing context"
+      ],
+      "layer": "contract",
+      "routedFrom": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [
+        "references/generate-context.md"
+      ],
+      "mentionedSkills": []
+    },
+    {
+      "folder": "vc-generate-phase-program",
+      "name": "vc-generate-phase-program",
+      "description": "Generate kickoff artifacts for a multi-phase program: umbrella plan, Program Goal Charter, session-goal block, per-phase plan stubs, and the 7-step per-phase inner loop reference.",
+      "aliases": [
+        "vc-generate-phase-program"
+      ],
+      "normalizedName": "vcgeneratephaseprogram",
+      "triggerKeywords": [
+        "phase program",
+        "umbrella plan",
+        "session goal block",
+        "kickoff template",
+        "multi-phase"
+      ],
+      "layer": "contract",
+      "routedFrom": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [],
+      "mentionedSkills": [
+        "vc-agent-strategy-compare"
+      ]
+    },
+    {
+      "folder": "vc-generate-plan",
+      "name": "vc-generate-plan",
+      "description": "Create or update implementation plans in the repo's SIMPLE or COMPLEX format. Use when turning an idea, PRD, or approved direction into a saved plan artifact.",
+      "aliases": [
+        "vc-generate-plan"
+      ],
+      "normalizedName": "vcgenerateplan",
+      "triggerKeywords": [
+        "plan",
+        "create plan",
+        "write plan",
+        "generate spec",
+        "plan artifact"
+      ],
+      "layer": "contract",
+      "routedFrom": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [
+        "references/generate-plan.md"
+      ],
+      "mentionedSkills": []
+    },
+    {
+      "folder": "vc-generate-spec",
+      "name": "vc-generate-spec",
+      "description": "Create or update a product-discovery SPEC (requirements doc) for user review. Use when turning RESEARCH findings plus user intent into a reviewable requirements artifact before INNOVATE/PLAN.",
+      "aliases": [
+        "vc-generate-spec"
+      ],
+      "normalizedName": "vcgeneratespec",
+      "triggerKeywords": [
+        "spec",
+        "requirements doc",
+        "product discovery",
+        "what and why",
+        "requirements artifact"
+      ],
+      "layer": "contract",
+      "routedFrom": [
+        "AGENTS.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [
+        "references/spec-contract.md",
+        "templates/program-spec-template.md"
+      ],
+      "mentionedSkills": []
+    },
+    {
+      "folder": "vc-intent-clarify",
+      "name": "vc-intent-clarify",
+      "description": "Clarify intent before RIPER-5 phase delegation. Scores ambiguity (4 signals); generates structured multi-choice questions for Tier 2. Two-mode: SIMPLE and DEEP.",
+      "aliases": [
+        "vc-intent-clarify"
+      ],
+      "normalizedName": "vcintentclarify",
+      "triggerKeywords": [
+        "intent clarification",
+        "ambiguity score",
+        "routing tier",
+        "clarify request"
+      ],
+      "layer": "contract",
+      "routedFrom": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [],
+      "mentionedSkills": []
+    },
+    {
+      "folder": "vc-plan-discovery",
+      "name": "vc-plan-discovery",
+      "description": "Discover related plans for the current task: same feature folder full depth, other features active-only, general-plans active. Like vc-context-discovery but for plan artifacts.",
+      "aliases": [
+        "vc-plan-discovery"
+      ],
+      "normalizedName": "vcplandiscovery",
+      "triggerKeywords": [
+        "related plans",
+        "what was tried",
+        "plan history",
+        "feature backlog",
+        "plan discovery"
+      ],
+      "layer": "contract",
+      "routedFrom": [
+        "AGENTS.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [],
+      "mentionedSkills": [
+        "vc-context-discovery"
+      ]
+    },
+    {
+      "folder": "vc-predict",
+      "name": "vc-predict",
+      "description": "5 expert personas debate proposed changes before implementation. Catches architectural, security, performance, and UX issues early. Use before major features or risky changes.",
+      "aliases": [
+        "vc-predict"
+      ],
+      "normalizedName": "vcpredict",
+      "triggerKeywords": [
+        "risks",
+        "predict issues",
+        "architectural review"
+      ],
+      "layer": "helper",
+      "routedFrom": [
+        "AGENTS.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [],
+      "mentionedSkills": [
+        "vc-scenario"
+      ]
+    },
+    {
+      "folder": "vc-problem-solving",
+      "name": "vc-problem-solving",
+      "description": "Apply systematic problem-solving techniques when stuck. Use for complexity spirals, innovation blocks, recurring patterns, assumption constraints, simplification cascades, scale uncertainty.",
+      "aliases": [
+        "vc-problem-solving"
+      ],
+      "normalizedName": "vcproblemsolving",
+      "triggerKeywords": [
+        "stuck",
+        "can't figure out",
+        "complex",
+        "spiral"
+      ],
+      "layer": "helper",
+      "routedFrom": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [
+        "references/attribution.md",
+        "references/collision-zone-thinking.md",
+        "references/inversion-exercise.md",
+        "references/meta-pattern-recognition.md",
+        "references/scale-game.md",
+        "references/simplification-cascades.md",
+        "references/when-stuck.md"
+      ],
+      "mentionedSkills": []
+    },
+    {
+      "folder": "vc-publish",
+      "name": "vc-publish",
+      "description": "Use when publishing harness improvements to the remote kit repo. Diffs managed files, shows what changed, bumps version, and pushes. Counterpart to vc-update (pull).",
+      "aliases": [
+        "vc-publish"
+      ],
+      "normalizedName": "vcpublish",
+      "triggerKeywords": [
+        "publish kit",
+        "push harness",
+        "release kit",
+        "update remote"
+      ],
+      "layer": "contract",
+      "routedFrom": [
+        "AGENTS.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [
+        "references/vc-publish.md"
+      ],
+      "mentionedSkills": [
+        "vc-audit-vc",
+        "vc-update"
+      ]
+    },
+    {
+      "folder": "vc-review-situation",
+      "name": "vc-review-situation",
+      "description": "Use when you need a read-only situation review and handoff summary of current branch state, local/remote refs, worktrees, active project plans, selected-plan hints, and suggested next checks.",
+      "aliases": [
+        "vc-review-situation"
+      ],
+      "normalizedName": "vcreviewsituation",
+      "triggerKeywords": [
+        "what's in flight",
+        "handoff",
+        "worktree status",
+        "active plans",
+        "next steps"
+      ],
+      "layer": "helper",
+      "routedFrom": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [
+        "references/review-situation-workflow.md"
+      ],
+      "mentionedSkills": []
+    },
+    {
+      "folder": "vc-risk-evidence-pack",
+      "name": "vc-risk-evidence-pack",
+      "description": "Define and generate the manual-first evidence pack for high-risk work. Covers 6 high-risk class definitions and the 5-artifact schema required before finalizing, pushing, or handing off.",
+      "aliases": [
+        "vc-risk-evidence-pack"
+      ],
+      "normalizedName": "vcriskevidencepack",
+      "triggerKeywords": [
+        "risk evidence",
+        "high-risk pack",
+        "evidence pack",
+        "risk gate",
+        "adversarial validation"
+      ],
+      "layer": "contract",
+      "routedFrom": [
+        "AGENTS.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [],
+      "mentionedSkills": []
+    },
+    {
+      "folder": "vc-scenario",
+      "name": "vc-scenario",
+      "description": "Generate comprehensive edge cases and test scenarios by decomposing features across 12 dimensions. Use before implementation or testing to catch issues early.",
+      "aliases": [
+        "vc-scenario"
+      ],
+      "normalizedName": "vcscenario",
+      "triggerKeywords": [
+        "edge cases",
+        "test scenarios",
+        "what could go wrong"
+      ],
+      "layer": "helper",
+      "routedFrom": [
+        "AGENTS.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [],
+      "mentionedSkills": [
+        "vc-predict"
+      ]
+    },
+    {
+      "folder": "vc-scout",
+      "name": "vc-scout",
+      "description": "Fast codebase scouting using shell search and optional parallel research agents. Use for file discovery, task context gathering, and quick scoped searches across directories.",
+      "aliases": [
+        "vc-scout"
+      ],
+      "normalizedName": "vcscout",
+      "triggerKeywords": [
+        "find files",
+        "where is",
+        "search codebase"
+      ],
+      "layer": "helper",
+      "routedFrom": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [
+        "references/external-scouting.md",
+        "references/internal-scouting.md",
+        "references/task-management-scouting.md"
+      ],
+      "mentionedSkills": []
+    },
+    {
+      "folder": "vc-security",
+      "name": "vc-security",
+      "description": "STRIDE + OWASP-based security audit with optional auto-fix. Scans code for vulnerabilities, categorizes by severity, and can iteratively fix findings using vc-autoresearch pattern.",
+      "aliases": [
+        "vc-security"
+      ],
+      "normalizedName": "vcsecurity",
+      "triggerKeywords": [
+        "security",
+        "vulnerability",
+        "auth",
+        "XSS",
+        "SQL injection"
+      ],
+      "layer": "helper",
+      "routedFrom": [
+        "AGENTS.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [
+        "references/stride-owasp-checklist.md"
+      ],
+      "mentionedSkills": [
+        "vc-autoresearch",
+        "vc-predict",
+        "vc-scenario"
+      ]
+    },
+    {
+      "folder": "vc-sequential-thinking",
+      "name": "vc-sequential-thinking",
+      "description": "Apply step-by-step analysis for complex problems with revision capability. Use for multi-step reasoning, hypothesis verification, adaptive planning, problem decomposition, course correction.",
+      "aliases": [
+        "vc-sequential-thinking"
+      ],
+      "normalizedName": "vcsequentialthinking",
+      "triggerKeywords": [
+        "complex problem",
+        "think through",
+        "analyze step by step"
+      ],
+      "layer": "helper",
+      "routedFrom": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [
+        "references/advanced-strategies.md",
+        "references/advanced-techniques.md",
+        "references/core-patterns.md",
+        "references/examples-api.md",
+        "references/examples-architecture.md",
+        "references/examples-debug.md",
+        "scripts/format-thought.js",
+        "scripts/process-thought.js"
+      ],
+      "mentionedSkills": []
+    },
+    {
+      "folder": "vc-setup",
+      "name": "vc-setup",
+      "description": "Interactive harness setup for any project. Detects stack, scaffolds process dirs, deep-scans the codebase, populates context. Works on fresh and existing projects — always asks before reorganizing.",
+      "aliases": [
+        "vc-setup"
+      ],
+      "normalizedName": "vcsetup",
+      "triggerKeywords": [
+        "seed",
+        "harness setup",
+        "bootstrap",
+        "new project",
+        "scaffold",
+        "setup"
+      ],
+      "layer": "helper",
+      "routedFrom": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [
+        "references/vc-setup.md"
+      ],
+      "mentionedSkills": [
+        "vc-generate-context",
+        "vc-update"
+      ]
+    },
+    {
+      "folder": "vc-test-coverage-plan",
+      "name": "vc-test-coverage-plan",
+      "description": "Use when creating a test plan for a blast radius. Assigns all 4 tiers (fully-automated, hybrid, agent-probe, known-gap) with exact commands, what each proves, and gap resolution options.",
+      "aliases": [
+        "vc-test-coverage-plan"
+      ],
+      "normalizedName": "vctestcoverageplan",
+      "triggerKeywords": [
+        "test coverage plan",
+        "test tiers",
+        "blast radius coverage",
+        "gap resolution",
+        "TDD plan"
+      ],
+      "layer": "contract",
+      "routedFrom": [
+        "AGENTS.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [],
+      "mentionedSkills": [
+        "vc-context-discovery",
+        "vc-feasibility-test"
+      ]
+    },
+    {
+      "folder": "vc-update",
+      "name": "vc-update",
+      "description": "Pull latest agent harness improvements from the remote kit repository. Shows a dry-run diff summary, waits for confirmation, then applies updates.",
+      "aliases": [
+        "vc-update"
+      ],
+      "normalizedName": "vcupdate",
+      "triggerKeywords": [
+        "update harness",
+        "pull kit",
+        "sync harness",
+        "upgrade agents"
+      ],
+      "layer": "contract",
+      "routedFrom": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [
+        "references/vc-update.md"
+      ],
+      "mentionedSkills": [
+        "vc-setup"
+      ]
+    },
+    {
+      "folder": "vc-validate-findings",
+      "name": "vc-validate-findings",
+      "description": "Use when running VALIDATE V2-V3 fan-out. Two-layer investigation (4 dimension agents + per-section feasibility agents) synthesized into PASS/CONDITIONAL/BLOCKED net gate. Strategy-agnostic.",
+      "aliases": [
+        "vc-validate-findings"
+      ],
+      "normalizedName": "vcvalidatefindings",
+      "triggerKeywords": [
+        "validate findings",
+        "layer 1 dimensions",
+        "layer 2 feasibility",
+        "net gate",
+        "validate fan-out"
+      ],
+      "layer": "contract",
+      "routedFrom": [
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [
+        "references/example-validate-output.md"
+      ],
+      "mentionedSkills": [
+        "vc-agent-strategy-compare",
+        "vc-predict",
+        "vc-scenario",
+        "vc-security",
+        "vc-sequential-thinking"
+      ]
+    },
+    {
+      "folder": "vc-web-testing",
+      "name": "vc-web-testing",
+      "description": "Web testing with Playwright, Vitest, k6. E2E/unit/integration/load/security/visual/a11y testing. Use for test automation, flakiness, Core Web Vitals, mobile gestures, cross-browser.",
+      "aliases": [
+        "vc-web-testing"
+      ],
+      "normalizedName": "vcwebtesting",
+      "triggerKeywords": [
+        "tests",
+        "e2e",
+        "integration test",
+        "performance test"
+      ],
+      "layer": "helper",
+      "routedFrom": [
+        "AGENTS.md",
+        "process/context/generated-skills-catalog.json"
+      ],
+      "allowlisted": false,
+      "allowlistReason": null,
+      "relativeReferences": [],
+      "mentionedSkills": []
+    }
+  ]
+}
